@@ -1,8 +1,8 @@
 {
-  "name": "digitalize",
+  "name": "@abikebuk/digitalize",
   "version": "1.0.0",
   "description": "Text animation themed on glitched/digital text.",
-  "main": "index.js",
+  "main": "digitalize.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
