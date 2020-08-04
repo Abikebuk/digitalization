@@ -1,13 +1,13 @@
-# Digitalization Script
+# Digitalization Script  
 ![](asset/digitalization.gif)
 Javascript text animation themed on digital/glitched text.
 
-## Installation
+## Installation  
 Install the digtalize package.
 ```
 npm install @abikebuk/digitalize
 ```
 
 
-## author 
+## author  
 Rettana Muon <rettana.muon@gmail.com>
