@@ -8,6 +8,5 @@ Install the digtalize package.
 npm install @abikebuk/digitalize
 ```
 
-
 ## author  
-Rettana Muon <rettana.muon@gmail.com>
+Rettana Muon : <rettana.muon@gmail.com>
