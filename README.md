@@ -1,4 +1,12 @@
 # Digitalization Script
+![](asset/digitalization.gif)
+Javascript text animation themed on digital/glitched text.
 
-A simple javascript animation script making the text digital/glitched.
+##Installation
+Install the digitalization module
+```
+npm install 
+```
 
+##author 
+Rettana Muon <rettana.muon@gmail.com>

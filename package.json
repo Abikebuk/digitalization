@@ -1,6 +1,6 @@
 {
   "name": "@abikebuk/digitalize",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Text animation themed on glitched/digital text.",
   "main": "digitalize.js",
   "scripts": {
@@ -11,12 +11,25 @@
     "url": "git+ssh://git@gitlab.com/rettana.muon/digitalization-script.git"
   },
   "keywords": [
-    "animation"
+    "animation",
+    "digitalize",
+    "digitalized",
+    "glitch",
+    "glitched",
+    "text",
+    "matrix",
+    "abikebuk"
   ],
   "author": "Rettana Muon",
   "license": "ISC",
   "bugs": {
     "url": "https://gitlab.com/rettana.muon/digitalization-script/issues"
   },
-  "homepage": "https://gitlab.com/rettana.muon/digitalization-script#readme"
+  "homepage": "https://gitlab.com/rettana.muon/digitalization-script#readme",
+  "directories": {
+    "test": "test"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
