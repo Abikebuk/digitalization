@@ -1,12 +1,23 @@
 # Digitalization Script  
-![](asset/digitalization.gif)
-Javascript text animation themed on digital/glitched text.
+![](asset/digitalize.gif)
 
+Javascript text animation themed on digital/glitched text.
+npm 
 ## Installation  
 Install the digtalize package.
 ```
 npm install @abikebuk/digitalize
 ```
+import the script.
+@TODO
 
-## author  
-Rettana Muon : <rettana.muon@gmail.com>
+## Features
+* Linear (from left to right) text display.
+* Speed of animation customizable.
+* Multiples modes : 
+    * Linear
+    * Full
+    * Countdown
+
+## Author  
+Abikebuk (Rettan Muon) : <rettana.muon@gmail.com>

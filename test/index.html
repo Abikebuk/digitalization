@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Digitalize Test HTML Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./main.css" />
@@ -8,29 +9,87 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div id="a"></div>
-        <div id="b"></div>
-        <div id="c"></div>
-        <div id="d"></div>
-        <div id="e"></div>
+        <div id="main">
+            <div id="a"></div>
+            <div class="wrapper">
+                <div class="vertical-bar"></div>
+                <div id="b"></div>
+                <div class="vertical-bar"></div>
+            </div>
+            <div class="wrapper">
+                <div class="vertical-bar"></div>
+                <div id="c"></div>
+                <div class="vertical-bar"></div>
+            </div>
+            <div class="wrapper">
+                <div class="vertical-bar"></div>
+                <div id="d"></div>
+                <div class="vertical-bar"></div>
+            </div>
+            <div id="e"></div>
+        </div>
     </div>
 </div>
 
 <script type="module">
     import {digitalize} from "../digitalize.js";
+    import { sleep } from "../utils.js";
+
     async function digitalizeAll(speed, nb_iteration) {
-        const a = document.getElementById('a'); a.innerHTML = '&nbsp';
-        const b = document.getElementById('b'); b.innerHTML = '&nbsp';
-        const c = document.getElementById('c'); c.innerHTML = '&nbsp';
-        const d = document.getElementById('d'); d.innerHTML = '&nbsp';
-        const e = document.getElementById('e'); e.innerHTML = '&nbsp';
-        await digitalize(a, '|********|', speed, nb_iteration, 'full', false, '!.|:');
-        await digitalize(b, '|DIGITAL_|', speed, nb_iteration, 'full', false, '/\\-');
-        await digitalize(c, '|_IZATION|', speed, nb_iteration, 'countdown', false);
-        await digitalize(d, '| SCRIPT |', speed, nb_iteration, 'linear', true);
-        await digitalize(e, '|********|', speed, nb_iteration, 'full', false);
+        const a = document.getElementById('a');
+        const b = document.getElementById('b');
+        const c = document.getElementById('c');
+        const d = document.getElementById('d');
+        const e = document.getElementById('e');
+        b.className = "";
+        c.className = "";
+        d.className = "";
+        const blankChar = '•';
+        clearContent(blankChar, a, b, c, d, e);
+        await sleep (2000);
+        await digitalizeBox(speed, nb_iteration, blankChar, a, e);
+        await sleep(1000);
+        await digitalizeContent(speed, nb_iteration, blankChar, b, c, d);
+        b.className = "colorChange";
+        c.className = "colorChange";
+        d.className = "colorChange";
     }
-    digitalizeAll(20,8);
+
+    async function digitalizeBox(speed, nb_iteration, blankChar, a, e){
+        const verticals = document.getElementsByClassName('vertical-bar');
+        digitalize(a, '╔════════╗', speed / 1.2, nb_iteration / 1.2, 'linear', false, blankChar);
+        digitalize(e, '╚════════╝', speed / 1.2, nb_iteration / 1.2, 'linear', false, blankChar);
+        for(let i = 0; i < verticals.length; i++){
+            const v = verticals.item(i);
+            digitalize(v, '║', speed, nb_iteration * i + 5, 'linear_full');
+        }
+    }
+
+    function clearContent(char, a, b, c, d ,e){
+        const verticals = document.getElementsByClassName('vertical-bar');
+        for(let i = 0; i < verticals.length; i++)
+            verticals.item(i).innerHTML = char;
+        a.innerHTML = char + char + char + char + char + char + char + char + char + char ;
+        b.innerHTML = char + char + char + char + char + char + char + char;
+        c.innerHTML = char + char + char + char + char + char + char + char;
+        d.innerHTML = char + char + char + char + char + char + char + char;
+        e.innerHTML = char + char + char + char + char + char + char + char + char + char ;
+    }
+
+    async function digitalizeContent(speed, nb_iteration, blankChar, b, c, d){
+        await digitalize(b, 'DIGITAL_', speed, nb_iteration, 'linear', false, blankChar, '/\\-');
+        await digitalize(c, '_IZATION', speed, nb_iteration, 'countdown', false, blankChar);
+        await digitalize(d, '•SCRIPT•', speed, nb_iteration, 'linear', true, blankChar);
+        await sleep(200);
+        digitalize(b, 'DIGITAL_', speed, nb_iteration / 5 , 'linear_full', false, blankChar, '/\\-');
+        digitalize(c, '_IZATION', speed * 1.25, nb_iteration / 5 , 'linear_full', false, blankChar);
+        digitalize(d, '•SCRIPT•', speed * 1.5, nb_iteration / 5, 'linear_full', true, blankChar);
+    }
+    /** The actual execution */
+    digitalizeAll(35,5);
+    document.getElementById('main').onclick = function () {
+        digitalizeAll(35,5);
+    }
 </script>
 
 <script src="../digitalize.js" type="module"></script>
