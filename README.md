@@ -1,5 +1,5 @@
 # Digitalization Script  
-![](asset/digitalize.gif)
+![](https://s7.gifyu.com/images/Digitalize-1.10.gif)
 
 Javascript text animation themed on digital/glitched text.
 npm 
@@ -15,9 +15,10 @@ import the script.
 * Linear (from left to right) text display.
 * Speed of animation customizable.
 * Multiples modes : 
-    * Linear
-    * Full
-    * Countdown
+    * linear
+    * linear_full
+    * countdown
+    * countdown_right
 
 ## Author  
-Abikebuk (Rettan Muon) : <rettana.muon@gmail.com>
+Abikebuk (Rettana Muon) : <rettana.muon@gmail.com>
