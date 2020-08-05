@@ -4,9 +4,9 @@
 Javascript text animation themed on digital/glitched text.
 npm 
 ## Installation  
-Install the digtalize package.
+Install the digitalization package.
 ```
-npm install @abikebuk/digitalize
+npm install @abikebuk/digitalization
 ```
 import the script.
 @TODO
@@ -20,5 +20,8 @@ import the script.
     * countdown
     * countdown_right
 
+## example directory
+The example directory contains the code used to make the gif on the top of the readme.
+
 ## Author  
-Abikebuk (Rettana Muon) : <rettana.muon@gmail.com>
+Abikebuk (Rettana Muon) : <rettana.muonpm n@gmail.com>

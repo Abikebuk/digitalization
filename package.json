@@ -1,10 +1,10 @@
 {
-  "name": "@abikebuk/digitalize",
-  "version": "1.1.0",
+  "name": "@abikebuk/digitalization",
+  "version": "1.1.1",
   "description": "Text animation themed on glitched/digital text.",
   "main": "digitalize.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \\\"Error: no example specified\\\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
   },
   "homepage": "https://gitlab.com/rettana.muon/digitalization-script#readme",
   "directories": {
-    "test": "test"
+    "test": "example"
   },
   "publishConfig": {
     "access": "public"
