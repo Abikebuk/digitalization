@@ -27,6 +27,7 @@
                 <div class="vertical-bar"></div>
             </div>
             <div id="e"></div>
+            <br>
             <div id="f"></div>
             <div id="g"></div>
             <div id="h"></div>
@@ -36,7 +37,7 @@
 </div>
 
 <script type="module">
-    import {digitalize, digitalizeLinear, digitalizeCountdown, digitalizeCountdownRight, digitalizeLinearFull} from "../digitalize.js";
+    import { digitalizeLinear, digitalizeCountdown, digitalizeCountdownRight, digitalizeLinearFull} from "../digitalize.js";
     import { sleep } from "../utils.js";
 
     async function digitalizeAll(speed, nb_iteration) {
@@ -59,13 +60,13 @@
         d.className = "colorChange";
     }
 
-    async function digitalizeBox(speed, nb_iteration, blankChar, a, e){
+    function digitalizeBox(speed, nb_iteration, blankChar, a, e){
         const verticals = document.getElementsByClassName('vertical-bar');
-        digitalize(a, '╔════════╗', speed / 1.2, nb_iteration / 1.2, 'linear', false, blankChar);
-        digitalize(e, '╚════════╝', speed / 1.2, nb_iteration / 1.2, 'linear', false, blankChar);
+        digitalizeLinear(a, '╔════════╗', speed / 1.2, nb_iteration / 1.2, false, blankChar);
+        digitalizeLinear(e, '╚════════╝', speed / 1.2, nb_iteration / 1.2, false, blankChar);
         for(let i = 0; i < verticals.length; i++){
             const v = verticals.item(i);
-            digitalize(v, '║', speed, nb_iteration * i + 5, 'linear_full');
+            digitalizeLinearFull(v, '║', speed, nb_iteration * i + 5);
         }
     }
 
@@ -79,16 +80,16 @@
         d.innerHTML = char + char + char + char + char + char + char + char;
         e.innerHTML = char + char + char + char + char + char + char + char + char + char ;
     }
-
     async function digitalizeContent(speed, nb_iteration, blankChar, b, c, d){
-        await digitalize(b, 'DIGITAL_', speed, nb_iteration, 'linear', false, blankChar, '/\\-');
-        await digitalize(c, '_IZATION', speed, nb_iteration, 'countdown', false, blankChar);
-        await digitalize(d, '•SCRIPT•', speed, nb_iteration, 'linear', true, blankChar);
-        await sleep(200);
-        digitalize(b, 'DIGITAL_', speed, nb_iteration / 5 , 'linear_full', false, blankChar);
-        digitalize(c, '_IZATION', speed * 1.25, nb_iteration / 5 , 'linear_full', false, blankChar);
-        digitalize(d, '•SCRIPT•', speed * 1.5, nb_iteration / 5, 'linear_full', true, blankChar);
+        await digitalizeLinear(b, 'DIGITAL_', speed, nb_iteration, false, blankChar, '/\\-')
+        await digitalizeCountdown(c, '_IZATION', speed * nb_iteration, blankChar);
+        await digitalizeLinear(d, '•SCRIPT•', speed, nb_iteration, true, blankChar);
+        await sleep(2000);
+        digitalizeLinearFull(b, 'DIGITAL_', speed, nb_iteration / 7, false, blankChar);
+        digitalizeLinearFull(c, '_IZATION', speed * 1.25, nb_iteration / 7, false, blankChar);
+        digitalizeLinearFull(d, '•SCRIPT•', speed * 1.5, nb_iteration / 7, true, blankChar);
     }
+
     /** The actual execution */
     digitalizeAll(35,5);
     document.getElementById('main').onclick = function () {

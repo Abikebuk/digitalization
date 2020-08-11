@@ -2,34 +2,7 @@
 ![](https://s7.gifyu.com/images/Digitalize-1.10.gif)
 
 Javascript text animation themed on digital/glitched text.
-npm 
-## Installation  
-Install the digitalization package.
-```
-npm install @abikebuk/digitalization
-```
-import the script.
-```js
-import { digitalize } from '@abikebuk/digitalization';
-```
 
-Use the digitalize or one of its shortcut
-```
-digitalize(
-    element : Element,      // The DOM element targetted
-    word : string           // Any string to print
-    speed : number          // The speed of each animation iteration
-    nbIteration : number    // The number of iteration
-    skipBlank : boolean     // If true, the script will skip any blank spaces (only the character " " that is made by the spacebar)
-    blankChar : string      // Each character that has not been print will be replaced by this blank_char
-    characters : string     // The random character are printed from this list of characters.
-)
-
-digitalizeLinear(element, word, speed, nbIteration, skipBlank, blankChar, characters);
-digitalizeLinearFull(element, word, speed, nbIteration, skipBlank, blankChar, characters);
-digitalizeCountdown(element, word, speed, skipBlank, blankChar);
-digitalizeCountdownRight(element, word, speed, skipBlank, blankChar);
-```
 ## Features
 * Every word is print character by character from left to right.
 * The animation will always have the size of the word and replace the space of the word that have yet not been print. 
@@ -40,6 +13,34 @@ digitalizeCountdownRight(element, word, speed, skipBlank, blankChar);
     * countdown : A number will be print on the next word's characters to be print.
     * countdown_right : A number will be print at the place of the rightest characters of the word.
     
+## Installation  
+Install the digitalization package.
+```
+npm install @abikebuk/digitalization
+```
+import the script.
+```js
+import { digitalize } from '@abikebuk/digitalization';
+```
+
+Use one of the digitalization function
+```
+digitalizeLinear(element, word, speed, nbIteration, skipBlank, blankChar, characters);
+digitalizeLinearFull(element, word, speed, nbIteration, skipBlank, blankChar, characters);
+digitalizeCountdown(element, word, speed, skipBlank, blankChar);
+digitalizeCountdownRight(element, word, speed, skipBlank, blankChar);
+```
+Variables explaination :  
+
+| Variable | Type | Optional | comment |
+|----------|------|----------|---------|
+| element | Element| No | Element on the DOM (innerHTML has to be accessible)|
+| word | string | No | word to print |
+| speed | number | Yes | The speed of each iteration of the animation.|
+| skipBlank | boolean | Yes | If true will ignore blank spaces (only the blank space created by clicking on the spacebar button)|
+| blankChar | string | Yes | Char printed at the place of each character of the word which have not been print yet |
+| characters | string | Yes | Set of character which are print randomly in linear modes.
+
 ## example directory
 The example directory contains the code used to make the gif on the top of the readme.
 

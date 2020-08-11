@@ -18,6 +18,30 @@ const defaultCountDownSpeed = defaultSpeed * defaultNbIterations;
 
 /** Core functions of Digitalize */
 
+/** Digitalize an element
+ * Core function of Digitalize. Create a digital animation on an HTMLElement.
+ * @param ele : Element an element in the dom.
+ * @param word : string, the string that shows up in the end of the animation.
+ * @param speed : number, the speed of each iteration (in ms) of the animation.
+ * @param nbIterations : number, the number of iteration for each characters of the animation.
+ * @param mode : 'linear'|'linear_full'|'countdown'|'countdown_right', the mode of the animation.
+ * @param skipBlank
+ * @param blankChar : string
+ * @param characters : string
+ * @returns void
+ */
+async function digitalize(
+    ele,
+    word,
+    speed  = 20,
+    nbIterations = 8,
+    mode = "linear",
+    skipBlank = defaultSkipBlank,
+    blankChar= defaultBlankChar,
+    characters = defaultCharacters) {
+        return new Promise(resolve => resolve(digitalizeCore(ele, word, speed, nbIterations, mode, skipBlank, blankChar, characters)))
+    }
+
 /**
  * Core function of Digitalize. Create a digital animation on an HTMLElement.
  * @param ele : Element an element in the dom.
@@ -30,11 +54,12 @@ const defaultCountDownSpeed = defaultSpeed * defaultNbIterations;
  * @param characters : string
  * @returns void
  */
-export async function digitalize(
+async function digitalizeCore(
     ele,
     word,
     speed  = 20,
-    nbIterations = 8, mode = "linear",
+    nbIterations = 8,
+    mode = "linear",
     skipBlank = defaultSkipBlank,
     blankChar= defaultBlankChar,
     characters = defaultCharacters) {
@@ -97,7 +122,7 @@ export async function digitalizeLinear(
     skipBlank = defaultSkipBlank,
     blankChar = defaultBlankChar,
     characters = defaultCharacters
-){ digitalize(ele, word, speed, nbIteration, 'linear', skipBlank, blankChar, characters); }
+){ return digitalize(ele, word, speed, nbIteration, 'linear', skipBlank, blankChar, characters) }
 
 /**
  * Digitalize in "Linear Full" mode
@@ -116,7 +141,7 @@ export async function digitalizeLinearFull(
     nbIteration = defaultNbIterations,
     skipBlank = defaultSkipBlank,
     characters = defaultCharacters
-){ digitalize(ele, word, speed, nbIteration, 'linear_full', skipBlank, '', characters); }
+){ return digitalize(ele, word, speed, nbIteration, 'linear_full', skipBlank, '', characters); }
 
 /**
  * Digitalize in "Countdown" mode
@@ -133,7 +158,7 @@ export async function digitalizeCountdown(
     speed = defaultCountDownSpeed,
     skipBlank = defaultSkipBlank,
     blankChar = defaultBlankChar
-){ digitalize(ele, word, speed, 0, 'countdown', skipBlank, blankChar, ""); }
+){ return digitalize(ele, word, speed, 0, 'countdown', skipBlank, blankChar, ""); }
 
 /**
  * Digitalize in "Countdown Right" mode
@@ -150,5 +175,5 @@ export async function digitalizeCountdownRight(
     speed = defaultCountDownSpeed,
     skipBlank = defaultSkipBlank,
     blankChar = defaultBlankChar
-){ digitalize(ele, word, speed, 0, 'countdown_right', skipBlank, blankChar, ""); }
+){ return digitalize(ele, word, speed, 0, 'countdown_right', skipBlank, blankChar, ""); }
 
