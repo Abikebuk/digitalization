@@ -25,10 +25,16 @@ import { digitalizeLinear, digitalizeLinearFull, digitalizeCountdown, digitalize
 ```
 
 Use one of the digitalization function
-```
+```js
 digitalizeLinear(element, word, speed, nbIteration, skipBlank, blankChar, characters);
+```
+```js
 digitalizeLinearFull(element, word, speed, nbIteration, skipBlank, blankChar, characters);
+```
+```js
 digitalizeCountdown(element, word, speed, skipBlank, blankChar);
+```
+```js
 digitalizeCountdownRight(element, word, speed, skipBlank, blankChar);
 ```
 Arguments explanation :  
