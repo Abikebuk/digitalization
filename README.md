@@ -4,6 +4,7 @@
 Javascript text animation themed on digital/glitched text.
 
 ## Features
+* Asynchronous animation. 
 * Every word is print character by character from left to right.
 * The animation will always have the size of the word and replace the space of the word that have yet not been print. 
 * Speed of animation is customizable.
@@ -30,7 +31,7 @@ digitalizeLinearFull(element, word, speed, nbIteration, skipBlank, blankChar, ch
 digitalizeCountdown(element, word, speed, skipBlank, blankChar);
 digitalizeCountdownRight(element, word, speed, skipBlank, blankChar);
 ```
-Variables explaination :  
+Arguments explanation :  
 
 | Variable | Type | Optional | comment |
 |----------|------|----------|---------|
@@ -51,5 +52,7 @@ The example directory contains the code used to make the gif on the top of the r
 * Not left to right modes (reverse / random)? 
 * More modes?
 
+## To Fix
+* Timing is off between linear and countdown modes
 ## Author  
 Abikebuk (Rettana Muon) : <rettana.muon@gmail.com>

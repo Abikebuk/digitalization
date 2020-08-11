@@ -1,6 +1,6 @@
 {
   "name": "@abikebuk/digitalization",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Text animation themed on glitched/digital text.",
   "main": "digitalize.js",
   "scripts": {

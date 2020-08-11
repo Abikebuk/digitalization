@@ -68,7 +68,7 @@ async function digitalizeCore(
     let i = 0;
     for (const letter of word) { // For each letters of the word...
         if (!skipBlank || letter !== " ") { // if not skip blank
-            for (let j = 0; j <= nbIterations  ; j++)
+            for (let j = 0; j < nbIterations  ; j++)
                 await generateNextIteration(ele, i, word, speed, mode, blankChar, characters);
         } else // If skip_blank, do nothing on this letter
             ele.innerHTML = fillWithBlank(ele, word, word.substr(0, i));
@@ -158,7 +158,7 @@ export async function digitalizeCountdown(
     speed = defaultCountDownSpeed,
     skipBlank = defaultSkipBlank,
     blankChar = defaultBlankChar
-){ return digitalize(ele, word, speed, 0, 'countdown', skipBlank, blankChar, ""); }
+){ return digitalize(ele, word, speed, 1, 'countdown', skipBlank, blankChar, ""); }
 
 /**
  * Digitalize in "Countdown Right" mode
@@ -175,5 +175,4 @@ export async function digitalizeCountdownRight(
     speed = defaultCountDownSpeed,
     skipBlank = defaultSkipBlank,
     blankChar = defaultBlankChar
-){ return digitalize(ele, word, speed, 0, 'countdown_right', skipBlank, blankChar, ""); }
-
+){ return digitalize(ele, word, speed, 1, 'countdown_right', skipBlank, blankChar, ""); }
