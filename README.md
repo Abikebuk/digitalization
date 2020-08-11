@@ -9,19 +9,26 @@ Install the digitalization package.
 npm install @abikebuk/digitalization
 ```
 import the script.
-@TODO
+```js
+import { digitalize } from '@abikebuk/digitalization';
+```
 
-Use the digitalize function
+Use the digitalize or one of its shortcut
 ```
 digitalize(
-    e : Element,            // The DOM element targetted
+    element : Element,      // The DOM element targetted
     word : string           // Any string to print
     speed : number          // The speed of each animation iteration
-    nb_iteration : number   // The number of iteration
-    skip_blank : boolean    // If true, the script will skip any blank spaces (only the character " " that is made by the spacebar)
-    blank_char : string     // Each character that has not been print will be replaced by this blank_char
+    nbIteration : number    // The number of iteration
+    skipBlank : boolean     // If true, the script will skip any blank spaces (only the character " " that is made by the spacebar)
+    blankChar : string      // Each character that has not been print will be replaced by this blank_char
     characters : string     // The random character are printed from this list of characters.
 )
+
+digitalizeLinear(element, word, speed, nbIteration, skipBlank, blankChar, characters);
+digitalizeLinearFull(element, word, speed, nbIteration, skipBlank, blankChar, characters);
+digitalizeCountdown(element, word, speed, skipBlank, blankChar);
+digitalizeCountdownRight(element, word, speed, skipBlank, blankChar);
 ```
 ## Features
 * Every word is print character by character from left to right.
@@ -37,9 +44,10 @@ digitalize(
 The example directory contains the code used to make the gif on the top of the readme.
 
 ## TODO
-* Sub functions for digitalize. There is way too much arguments.
 * Blank space filled with string on top of the char filling.
 * Function names change.
+* Support for non monospaced font.
+* Not left to right modes (reverse / random)? 
 * More modes?
 
 ## Author  

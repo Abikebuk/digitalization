@@ -27,12 +27,16 @@
                 <div class="vertical-bar"></div>
             </div>
             <div id="e"></div>
+            <div id="f"></div>
+            <div id="g"></div>
+            <div id="h"></div>
+            <div id="i"></div>
         </div>
     </div>
 </div>
 
 <script type="module">
-    import {digitalize} from "../digitalize.js";
+    import {digitalize, digitalizeLinear, digitalizeCountdown, digitalizeCountdownRight, digitalizeLinearFull} from "../digitalize.js";
     import { sleep } from "../utils.js";
 
     async function digitalizeAll(speed, nb_iteration) {
@@ -90,6 +94,15 @@
     document.getElementById('main').onclick = function () {
         digitalizeAll(35,5);
     }
+
+    const f = document.getElementById('f');
+    const g = document.getElementById('g');
+    const h = document.getElementById('h');
+    const i = document.getElementById('i');
+    digitalizeLinear(f, 'Abikebuk.\'s.Testing.Process', 8, 20, false, '?');
+    digitalizeLinearFull(g, 'Abikebuk.\'s.Testing.Process', 8, 20, false);
+    digitalizeCountdown(h, 'Abikebuk.\'s.Testing.Process', 200,'?');
+    digitalizeCountdownRight(i, 'Abikebuk.\'s.Testing.Process', 200,'?')
 </script>
 
 <script src="../digitalize.js" type="module"></script>
