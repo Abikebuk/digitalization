@@ -21,7 +21,7 @@ npm install @abikebuk/digitalization
 ```
 import the script.
 ```js
-import { digitalize } from '@abikebuk/digitalization';
+import { digitalizeLinear, digitalizeLinearFull, digitalizeCountdown, digitalizeCountdownRight } from '@abikebuk/digitalization';
 ```
 
 Use one of the digitalization function
